@@ -8,7 +8,7 @@ def init_driver(request):
     pass
     supported_browsers = ['chrome', 'ch', 'headlesschrome', 'firefox', 'ff']
 
-    browser = os.environ.get('BROWSER', None)   #By default will return None even if not configured
+    browser = os.environ.get('BROWSER', None)   #By default will return None even if not configured NONE
     if not browser:
         raise Exception("The environment variable 'BROWSER' must be  set.")
 
