@@ -1,25 +1,21 @@
 from autoTests.src.pages.locators import MyAccountSinedIOutLocator
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.ui import WebDriverWait
+from autoTests.src.SeleniumExtended import SeleniumExtended
 
 class MyAccountSignedOut(MyAccountSinedIOutLocator):
 
     def __init__(self, driver):
         self.driver = driver
+        self.sl = SeleniumExtended(self.driver)
     def go_to_my_account(self):
         self.driver.get('')
 
     def input_login_username(self, username):
-        WebDriverWait(self.driver, 10).until(
-            EC.visibility_of_element_located(self.login_username)
-        ).send_keys(username)
+        self.sl.wait_and_input_text(self.LOGIN_USERNAME, username)
 
     def input_login_password(self, password):
-        WebDriverWait(self.driver, 10).until(
-            EC.visibility_of_element_located(self.login_password)
-        ).send_keys(password)
+        self.sl.wait_and_input_text(self.LOGIN_PASSWORD, password)
 
     def click_login_btn(self):
-        WebDriverWait(self.driver, 10).until(
-            EC.visibility_of_element_located(self.login_btn)
-        ).click()
+        self.sl.wait_and_input_text(self.LOGIN_BTN)
