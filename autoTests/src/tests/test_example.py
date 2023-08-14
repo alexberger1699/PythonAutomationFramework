@@ -18,4 +18,4 @@ class Test_class:
     @pytest.mark.smoke
     def test_b(self):
         print('sdd')
-        assert 1==2, 'my failed'
+        assert 1==2, 'failed'
