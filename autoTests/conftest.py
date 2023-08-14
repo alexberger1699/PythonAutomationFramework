@@ -18,6 +18,7 @@ def init_driver(request):
                         f"Supported are: {supported_browsers}")
 
     if browser in ('chrome', 'ch'):
+        print(browser)
         driver = webdriver.Chrome()
     elif browser in ('firefox', 'ff'):
         driver = webdriver.Firefox()

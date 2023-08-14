@@ -1,9 +1,21 @@
+
+from selenium import webdriver
+
+
 import pytest
 
-@pytest.mark.usefixtures("init_driver")
-class TestExample():
+pytestmark = [pytest.mark.stan, pytest.mark.raw]
+class Test_class:
 
-    def test_example_func(self):
-        print("example")
-        self.driver.get("https://supersqa.com")
-        import pdb; pdb.set_trace()
+
+    @pytest.mark.dd
+    def test_a (self):
+        print('alex')
+
+
+
+    @pytest.mark.dd
+    @pytest.mark.smoke
+    def test_b(self):
+        print('sdd')
+        assert 1==2, 'my failed'
