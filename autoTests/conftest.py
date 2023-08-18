@@ -24,6 +24,8 @@ def init_driver(request):
         driver = webdriver.Firefox()
 
     request.cls.driver = driver
+
+
     yield
     driver.quit()
 
