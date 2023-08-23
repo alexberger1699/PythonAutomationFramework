@@ -26,3 +26,7 @@ class MyAccountSignedOut(MyAccountSinedIOutLocator):
 
     def click_login_btn(self):
         self.sl.wait_and_input_text(self.LOGIN_BTN)
+
+
+    def test(self):
+        pass
