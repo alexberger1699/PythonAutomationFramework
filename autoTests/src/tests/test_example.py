@@ -1,15 +1,14 @@
-<<<<<<< HEAD
-from selenium import webdriver
-from time import sleep
-=======
 
 from selenium import webdriver
->>>>>>> caef9fd7de7e70c0e4e98e71ff3549defb40856a
+from time import sleep
+
+
+from selenium import webdriver
 
 
 import pytest
 
-<<<<<<< HEAD
+
 def test_my_example():
     driver = webdriver.Chrome()
     url = 'https://yahoo.com'
@@ -25,7 +24,6 @@ def test_example_test():
     url = 'https://google.com'
     driver.get(url)
     sleep(10)
-=======
 
 @pytest.mark.usefixtures("init_driver")
 class Test_class():
@@ -38,4 +36,4 @@ class Test_class():
     def test_b(self):
         print('sdd')
         assert 1==2, 'failed'
->>>>>>> caef9fd7de7e70c0e4e98e71ff3549defb40856a
+
