@@ -1,41 +1,18 @@
-<<<<<<< HEAD
-from selenium import webdriver
-from time import sleep
-=======
+
+
 
 from selenium import webdriver
->>>>>>> caef9fd7de7e70c0e4e98e71ff3549defb40856a
-
-
 import pytest
+from autoTests.src import SeleniumExtended as sl
+from autoTests.src.pages.locators import loginEvLocators
+from autoTests.src.helpers.config_helpers import get_base_url
 
-<<<<<<< HEAD
-def test_my_example():
-    driver = webdriver.Chrome()
-    url = 'https://yahoo.com'
-    driver.get(url)
-    sleep(2)
-    driver.quit()
+class Test_example:
 
+    def __init__(self, driver):
+        self.driver = webdriver.Chrome()
 
-
-
-def test_example_test():
-    driver = webdriver.Chrome()
-    url = 'https://google.com'
-    driver.get(url)
-    sleep(10)
-=======
-
-@pytest.mark.usefixtures("init_driver")
-class Test_class():
-
-    def test_a (self):
-        print('alex')
-        self.driver.get('https://google.com')
-
-
-    def test_b(self):
-        print('sdd')
-        assert 1==2, 'failed'
->>>>>>> caef9fd7de7e70c0e4e98e71ff3549defb40856a
+    def login(self):
+        browser = get_base_url()
+        self.driver.get(browser)
+        sl.wait_and_click(self.USERNAME)
