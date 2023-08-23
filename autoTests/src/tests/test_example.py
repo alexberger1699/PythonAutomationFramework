@@ -1,9 +1,21 @@
+from selenium import webdriver
+from time import sleep
+
+
 import pytest
 
-@pytest.mark.usefixtures("init_driver")
-class TestExample():
+def test_my_example():
+    driver = webdriver.Chrome()
+    url = 'https://yahoo.com'
+    driver.get(url)
+    sleep(2)
+    driver.quit()
 
-    def test_example_func(self):
-        print("example")
-        self.driver.get("https://supersqa.com")
-        import pdb; pdb.set_trace()
+
+
+
+def test_example_test():
+    driver = webdriver.Chrome()
+    url = 'https://google.com'
+    driver.get(url)
+    sleep(10)
