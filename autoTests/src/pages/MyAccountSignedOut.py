@@ -15,7 +15,7 @@ class MyAccountSignedOut(MyAccountSinedIOutLocator):
     def go_to_my_account(self):
         base_url = get_base_url()
         my_account_url = base_url + self.endpoint
-        self.driver.get('')
+        self.driver.get(my_account_url)
 
 
     def input_login_username(self, username):
@@ -26,3 +26,7 @@ class MyAccountSignedOut(MyAccountSinedIOutLocator):
 
     def click_login_btn(self):
         self.sl.wait_and_input_text(self.LOGIN_BTN)
+
+
+    def test(self):
+        pass

@@ -3,7 +3,11 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
 
+<<<<<<< HEAD
 class SeleniumExtended:
+=======
+class SeleniumExtended():
+>>>>>>> caef9fd7de7e70c0e4e98e71ff3549defb40856a
 
     def __init__(self, driver):
         self.driver= driver
