@@ -3,8 +3,8 @@ import pymysql
 
 def read_from_db(sql):
     #connect to DB
-    connection = pymysql.connect(host="fuelpointqa.database.windows.net", user="yoni",
-                                 password="Pooh2357", database="Fuel_Web_Dev_India_QA")
+    connection = pymysql.connect(host="127.0.0.1", user="alex.db",
+                                 password="7663598", database="autodb")
 
     try:
         cursor = connection.cursor(pymysql.cursors.DictCursor)
@@ -25,7 +25,7 @@ def get_order_from_db_order_no():
     db_order = read_from_db(sql)
     print(db_order)
 
-get_order_from_db_order_no()
+read_from_db()
 
 
 
