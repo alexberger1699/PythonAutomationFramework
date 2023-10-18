@@ -6,7 +6,13 @@ def read_from_db(sql):
     connection = pymysql.connect(host="127.0.0.1", user="alex.db",
                                  password="7663598", database="autodb")
 ##
-
+    try:
+        cursor = connection.cursor(pymysql.cursors.DictCursor)
+        cursor.execute(sql)
+        db_data = cursor.fetchall()
+        cursor.close()
+    finally:
+        connection.close()
 
     #read
 
