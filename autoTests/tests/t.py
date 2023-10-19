@@ -1,5 +1,11 @@
 
+import psutil
 
+battery = psutil.sensors_battery()
+percent = str(battery.percent)
+plugged = battery.power_plugged
+plugged = 'Plugged in' if plugged else 'Unpluged'
+print(percent + '%' + ' | ' + plugged )
 
 names = ['Alex',
          'Mishel',
@@ -47,7 +53,7 @@ length = {name:len(name) for name in names}
 
 lengthCars = {name:len(name) for name in cars}
 
-
+#
 
 lengthCompamies ={name:len(name) for name in companies}
 
