@@ -20,3 +20,9 @@ rand_info = {'email':random_email, 'password':rand_pssw}
 
 print(f'this is dictionary: {rand_info}')
 
+
+m = 10
+
+mn = ''.join(random.choices(string.ascii_letters, k=m))
+
+print(f'second is dictionary: {mn}')
