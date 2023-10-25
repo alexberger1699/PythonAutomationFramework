@@ -1,65 +1,22 @@
-
-import psutil
-
-battery = psutil.sensors_battery()
-percent = str(battery.percent)
-plugged = battery.power_plugged
-plugged = 'Plugged in' if plugged else 'Unpluged'
-print(percent + '%' + ' | ' + plugged )
-
-names = ['Alex',
-         'Mishel',
-         'Anastasia',
-         'Adam']
+import random
+import string
 
 
 
-cars  = [
-    'Ferrary',
-    'Mazda',
-    'Toyota',
-    'Pegeot',
-    'Tesla'
+random_email_string_length = 3
 
-]
+random_email = ''.join(random.choices(string.ascii_lowercase, k = random_email_string_length))
+
+print(random_email)
 
 
-streets = ['Begin',
-           'Rabin',
-           'Weizman'
-           ]
+rand_pssw_length = 20
 
+rand_pssw = ''.join(random.choices(string.ascii_letters, k = rand_pssw_length))
 
+print(rand_pssw)
 
-companies = ['Apple',
-             'Google',
-             'X',
-             'Matrix',
-             '']
+rand_info = {'email':random_email, 'password':rand_pssw}
 
-#Count length of names
-# length = [len(name) for name in names]
+print(f'this is dictionary: {rand_info}')
 
-
-#Count length and link
-lenghStreet = {name:len(name) for name in streets}
-
-
-
-
-
-
-length = {name:len(name) for name in names}
-
-lengthCars = {name:len(name) for name in cars}
-
-#
-
-lengthCompamies ={name:len(name) for name in companies}
-
-
-
-print (length)
-print (lengthCars)
-print(lenghStreet)
-print(lengthCompamies)
