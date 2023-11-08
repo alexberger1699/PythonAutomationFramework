@@ -3,7 +3,5 @@ import time
 
 
 def get_base_url():
-    env = os.environ.get('ENV', 'test')
-    if env.lower()== 'test':
-        return 'https://google.com'
-    time.sleep(100000)
+    env = 'http://localhost:8888/quicksite/'
+    return env

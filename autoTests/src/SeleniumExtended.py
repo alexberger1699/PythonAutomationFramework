@@ -34,3 +34,13 @@ class SeleniumExtended():
 
 
 
+    def wait_until_element_is_visible(self, locator, timeout=None):
+        timeout = timeout if timeout else timeout = self.default_timeout
+
+        WebDriverWait(self.driver, timeout).until(
+            EC.visibility_of_element_located(locator)
+        )
+
+
+
+
