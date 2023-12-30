@@ -1,8 +1,9 @@
 import os
+import pytest
+from selenium import webdriver
 import time
 
-from selenium import webdriver
-import pytest
+
 
 @pytest.fixture(scope="class")
 def init_driver(request):
@@ -28,31 +29,36 @@ def init_driver(request):
         driver = webdriver.Edge()
 
 
+    request.cls.driver = driver
+    driver.get("https://room.com")
+
+
 
 
 @pytest.fixture(scope="class")
 def setup(request):
     # chrome_options = webdriver.ChromeOptions()
     # chrome_options.headless = True
-    options = webdriver.ChromeOptions()
-    options.add_experimental_option("detach", True)
+    # options = webdriver.ChromeOptions()
+    # options.add_experimental_option("detach", True)
 
     #Headless mode run tests
     # driver = webdriver.Chrome(options=chrome_options)
 
     #GUI mode run tests
-    driver = webdriver.Chrome(options=options)
+    driver = webdriver.Chrome()
 
     #URL
     #driver.get("https://fuelpoint-qa.roseman.co.il/")
-    driver.get("http://localhost:8888/quicksite/my-account/")
-
-
+    # driver.get("http://localhost:8888/quicksite/my-account/")
+    driver.get("https://room.com")
+    time.sleep(3)
     request.cls.driver = driver
 
 
     # yield
-    # driver.close()
+
+    driver.close()
 
     
 
