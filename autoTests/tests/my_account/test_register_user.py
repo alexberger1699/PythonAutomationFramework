@@ -1,11 +1,11 @@
 
 import pytest
 from autoTests.src.pages.MyAccountSignedOut import MyAccountSignedOut
-
+@pytest.mark.tcid13
 @pytest.mark.usefixtures("setup")
 class TestRegisterUser:
 
-    @pytest.mark.tcid13
+
     def test_register_user(self):
         my_account_o = MyAccountSignedOut(self.driver)
 

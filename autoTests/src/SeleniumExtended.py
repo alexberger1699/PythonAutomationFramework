@@ -34,3 +34,10 @@ class SeleniumExtended():
 
 
 
+    def wait_element_and_get_text(self, locator, text):
+        WebDriverWait(self.driver, 5).until(
+            EC.text
+        )
+
+
+
